@@ -1,7 +1,7 @@
 # Store Prosedürler ve Açıklamaları
 ---
 
-# 1. CategoryListByNameAndCategoryPath
+# 1. CategoryListByNameAndCategoryPath Prosedürü
 
 ```
 CREATE PROCEDURE CategoryListByNameAndCategoryPath 
@@ -38,7 +38,7 @@ END
 
 ---
 
-# 2. CategoryListWithSubCategories
+# 2. CategoryListWithSubCategories Prosedürü
 
 ```
 CREATE PROCEDURE CategoryListWithSubCategories
@@ -78,7 +78,7 @@ END
 
 ---
 
-# 3. 
+# 3. MainCategoryListByCategoryId Prosedürü
 
 ```
 CREATE PROCEDURE MainCategoryListByCategoryId
