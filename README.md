@@ -1,7 +1,7 @@
 # E-TicaretDataBase Tabloları ve Açıklamaları
 ---
 
-# Categories Tablosu
+# 1. Categories Tablosu
 
 ```
 Id
@@ -18,7 +18,7 @@ VatRate
 
 ---
 
-# CategoryEquivalents Tablosu
+# 2. CategoryEquivalents Tablosu
 
 ```
 Id
@@ -32,7 +32,7 @@ UpdatedDate
 
 ---
 
-# CategoryFields Tablosu
+# 3. CategoryFields Tablosu
 
 ```
 Id
@@ -46,7 +46,7 @@ UpdatedDate
 
 ---
 
-# CommentImageUrls Tablosu
+# 4. CommentImageUrls Tablosu
 
 ```
 Id
@@ -60,7 +60,7 @@ UpdatedDate
 
 ---
 
-# CommentLikes Tablosu
+# 5. CommentLikes Tablosu
 
 ```
 Id
@@ -74,7 +74,7 @@ UpdatedDate
 
 ---
 
-# Comments Tablosu
+# 6. Comments Tablosu
 
 ```
 Id
@@ -89,7 +89,7 @@ UpdatedDate
 
 ---
 
-# Invoices Tablosu
+# 7. Invoices Tablosu
 
 ```
 Id
@@ -106,7 +106,7 @@ Discount
 
 ---
 
-# Orders Tablosu
+# 8. Orders Tablosu
 
 ```
 Id
@@ -125,7 +125,7 @@ CargoTracingNumber
 
 ---
 
-# OrderStatuses Tablosu
+# 9. OrderStatuses Tablosu
 
 ```
 Id
@@ -139,7 +139,7 @@ IsActive
 
 ---
 
-# PaymentDetails Tablosu
+# 10. PaymentDetails Tablosu
 
 ```
 Id
@@ -159,7 +159,7 @@ Description
 
 ---
 
-# ProductFieldCategoryFields Tablosu
+# 11. ProductFieldCategoryFields Tablosu
 
 ```
 Id
@@ -174,7 +174,7 @@ UpdatedDate
 
 ---
 
-# ProductFieldImageUrls Tablosu
+# 12. ProductFieldImageUrls Tablosu
 
 ```
 Id
@@ -188,7 +188,7 @@ ProductFieldId
 
 ---
 
-# ProductFields Tablosu
+# 13. ProductFields Tablosu
 
 ```
 Id
@@ -209,7 +209,7 @@ IsVatInclude
 
 ---
 
-# Products Tablosu
+# 14. Products Tablosu
 
 ```
 Id
@@ -224,7 +224,7 @@ SellerId
 
 ---
 
-# ProductSelections Tablosu
+# 15. ProductSelections Tablosu
 
 ```
 Id
@@ -239,7 +239,7 @@ MainProductSelectionId
 
 ---
 
-# Sellers Tablosu
+# 16. Sellers Tablosu
 
 ```
 Id
@@ -270,7 +270,7 @@ IsActive
 
 ---
 
-# SellerTitles Tablosu
+# 17. SellerTitles Tablosu
 
 ```
 Id
@@ -284,7 +284,7 @@ SellerId
 
 ---
 
-# ShoppingCarts Tablosu
+# 18. ShoppingCarts Tablosu
 
 ```
 Id
@@ -299,7 +299,7 @@ UpdatedDate
 
 ---
 
-# TaxDepartments Tablosu
+# 19. TaxDepartments Tablosu
 
 ```
 Id
@@ -313,7 +313,7 @@ Name
 
 ---
 
-# TicketDetails Tablosu
+# 20. TicketDetails Tablosu
 
 ```
 Id
@@ -329,7 +329,7 @@ UpdatedDate
 
 ---
 
-# Tickets Tablosu
+# 21. Tickets Tablosu
 
 ```
 Id
@@ -344,7 +344,7 @@ UpdatedDate
 
 ---
 
-# UserAddresses Tablosu
+# 22. UserAddresses Tablosu
 
 ```
 Id
@@ -364,7 +364,7 @@ UpdatedDate
 
 ---
 
-# Users Tablosu
+# 23. Users Tablosu
 
 ```
 Id
@@ -380,32 +380,3 @@ UpdatedDate
 
 **AÇIKLAMA:** 
 
----
-
-#  Tablosu
-
-```
-
-```
-
-**AÇIKLAMA:** 
-
----
-
-#  Tablosu
-
-```
-
-```
-
-**AÇIKLAMA:** 
-
----
-
-#  Tablosu
-
-```
-
-```
-
-**AÇIKLAMA:** 
