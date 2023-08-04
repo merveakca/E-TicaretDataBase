@@ -13,7 +13,7 @@ BEGIN
         SELECT 
             Id,
             Name,
-            CAST(Name AS NVARCHAR(255)) AS CategoryPath
+            CAST(Name AS NVARCHAR(MAX)) AS CategoryPath
         FROM 
             Categories
         WHERE 
@@ -23,7 +23,7 @@ BEGIN
         SELECT 
             c.Id,
             c.Name,
-            CAST(ch.CategoryPath + ' > ' + c.Name AS NVARCHAR(255)) AS CategoryPath
+            CAST(ch.CategoryPath + ' > ' + c.Name AS NVARCHAR(MAX)) AS CategoryPath
         FROM 
             Categories c
         JOIN 
@@ -43,34 +43,33 @@ END
 ```
 CREATE PROCEDURE CategoryListWithSubCategories
 AS
-Begin
-WITH CategoryHierarchy AS (
-	SELECT 
-		Id,
-		Name,
-		IsActive,
-		MainCategoryId,
-		CAST(Name as VARCHAR(MAX)) AS Hierarchy
-	FROM
-		Categories
-	WHERE 
-		MainCategoryId is Null
+BEGIN
+    WITH CategoryHierarchy AS (
+        SELECT 
+            Id,
+            Name,
+            IsActive,
+            MainCategoryId,
+            CAST(Name AS VARCHAR(MAX)) AS Hierarchy
+        FROM
+            Categories
+        WHERE 
+            MainCategoryId IS NULL
 
-	UNION ALL
+        UNION ALL
 
-	SELECT
-		c.Id,
-		c.Name,
-		c.IsActive,
-		c.MainCategoryId,
-		CAST((ch.Hierarchy + ' > ' + c.Name) AS VARCHAR(MAX)) as Hierarchy
-	FROM 
-	Categories c
-	INNER JOIN CategoryHierarchy ch
-	ON ch.Id = c.MainCategoryId
-)
-
-SELECT Hierarchy From CategoryHierarchy where IsActive = 1
+        SELECT
+            c.Id,
+            c.Name,
+            c.IsActive,
+            c.MainCategoryId,
+            CAST((ch.Hierarchy + ' > ' + c.Name) AS VARCHAR(MAX)) AS Hierarchy
+        FROM 
+            Categories c
+        INNER JOIN CategoryHierarchy ch
+        ON ch.Id = c.MainCategoryId
+    )
+    SELECT Hierarchy FROM CategoryHierarchy WHERE IsActive = 1;
 END
 ```
 
@@ -85,36 +84,34 @@ CREATE PROCEDURE MainCategoryListByCategoryId
 @categoryId INT
 AS
 BEGIN
-WITH CategoryHierarchy AS (
-	SELECT
-		Id,
-		Name,
-		IsActive,
-		MainCategoryId,
-		CAST(Name as VARCHAR(MAX)) AS Hierarchy
-	FROM
-		Categories
-	Where 
-		Id = @categoryId
+    WITH CategoryHierarchy AS (
+        SELECT
+            Id,
+            Name,
+            IsActive,
+            MainCategoryId,
+            CAST(Name AS VARCHAR(MAX)) AS Hierarchy
+        FROM
+            Categories
+        WHERE 
+            Id = @categoryId
 
-	UNION ALL
+        UNION ALL
 
-	SELECT
-		c.Id,
-		c.Name,
-		c.IsActive,
-		c.MainCategoryId,
-		CAST((c.name  + ' > ' + ch.Hierarchy) as VARCHAR(MAX)) AS Hierarchy 
-	FROM
-		Categories c
-	INNER JOIN CategoryHierarchy ch
-	ON ch.MainCategoryId = c.Id
-)
-
-SELECT TOP 1 Hierarchy 
-FROM CategoryHierarchy
-Where IsActive = 1
-Order By LEN(Hierarchy) DESC
+        SELECT
+            c.Id,
+            c.Name,
+            c.IsActive,
+            c.MainCategoryId,
+            CAST((c.name  + ' > ' + ch.Hierarchy) AS VARCHAR(MAX)) AS Hierarchy 
+        FROM
+            Categories c
+        INNER JOIN CategoryHierarchy ch
+        ON ch.MainCategoryId = c.Id
+    )
+    SELECT Hierarchy 
+    FROM CategoryHierarchy
+    WHERE IsActive = 1 AND MainCategoryId IS NULL;
 END
 ```
 
