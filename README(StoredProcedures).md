@@ -7,30 +7,30 @@
 CREATE PROCEDURE CategoryListByNameAndCategoryPath 
 AS
 BEGIN
-WITH CategoryHierarchy AS
-(
-    -- Ana kategorileri bul
-    SELECT 
-        Id,
-        Name,
-        CAST(Name AS NVARCHAR(MAX)) AS CategoryPath
-    FROM 
-        Categories
-    WHERE 
-        MainCategoryId IS NULL
-    UNION ALL
-    -- Alt kategorileri bul
-    SELECT 
-        c.Id,
-        c.Name,
-        CAST(ch.CategoryPath + ' > ' + c.Name AS NVARCHAR(MAX)) AS CategoryPath
-    FROM 
-        Categories c
-    JOIN 
-        CategoryHierarchy ch ON ch.Id = c.MainCategoryId
-)
-SELECT * FROM CategoryHierarchy
-ORDER BY CategoryPath;
+    WITH CategoryHierarchy AS
+    (
+        -- Ana kategorileri bul
+        SELECT 
+            Id,
+            Name,
+            CAST(Name AS NVARCHAR(255)) AS CategoryPath
+        FROM 
+            Categories
+        WHERE 
+            MainCategoryId IS NULL
+        UNION ALL
+        -- Alt kategorileri bul
+        SELECT 
+            c.Id,
+            c.Name,
+            CAST(ch.CategoryPath + ' > ' + c.Name AS NVARCHAR(255)) AS CategoryPath
+        FROM 
+            Categories c
+        JOIN 
+            CategoryHierarchy ch ON ch.Id = c.MainCategoryId
+    )
+    SELECT * FROM CategoryHierarchy
+    ORDER BY CategoryPath;
 END
 ```
 
