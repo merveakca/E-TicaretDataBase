@@ -38,10 +38,10 @@ END
 
 ---
 
-# 2. 
+# 2. CategoryListWithSubCategories
 
 ```
-CREATE Procedure [dbo].[CategoryListWithSubCategories]
+CREATE PROCEDURE CategoryListWithSubCategories
 AS
 Begin
 WITH CategoryHierarchy AS (
@@ -53,7 +53,7 @@ WITH CategoryHierarchy AS (
 		CAST(Name as VARCHAR(MAX)) AS Hierarchy
 	FROM
 		Categories
-	Where 
+	WHERE 
 		MainCategoryId is Null
 
 	UNION ALL
@@ -64,14 +64,14 @@ WITH CategoryHierarchy AS (
 		c.IsActive,
 		c.MainCategoryId,
 		CAST((ch.Hierarchy + ' > ' + c.Name) AS VARCHAR(MAX)) as Hierarchy
-	From 
+	FROM 
 	Categories c
 	INNER JOIN CategoryHierarchy ch
-	on ch.Id = c.MainCategoryId
+	ON ch.Id = c.MainCategoryId
 )
 
 SELECT Hierarchy From CategoryHierarchy where IsActive = 1
-End
+END
 ```
 
 **AÇIKLAMA:** 
@@ -81,7 +81,8 @@ End
 # 3. 
 
 ```
-CREATE PROCEDURE [dbo].[MainCategoryListByCategoryId] @categoryId INT
+CREATE PROCEDURE MainCategoryListByCategoryId
+@categoryId INT
 AS
 BEGIN
 WITH CategoryHierarchy AS (
@@ -111,7 +112,7 @@ WITH CategoryHierarchy AS (
 )
 
 SELECT TOP 1 Hierarchy 
-From CategoryHierarchy
+FROM CategoryHierarchy
 Where IsActive = 1
 Order By LEN(Hierarchy) DESC
 END
