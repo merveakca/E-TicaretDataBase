@@ -322,7 +322,7 @@ IsActive
 
 **AÇIKLAMA:** 
 
-Bu tablo, satıcıların kimlik bilgilerini, hesap durumlarını, şifre doğrulamalarını, ortalama değerlendirmelerini ve genel hesap bilgilerini saklamak için kullanılır. "TaxDepartmentId" alanı ile satıcıların vergi dairesine bağlı olduğu bilgisi tutulabilir ve "IsActive" alanı ile satıcı hesaplarının etkinliği kontrol edilebilir. Bu tür bir tablo, bir e-ticaret platformunda veya bir pazaryerinde satıcıların hesap yönetimi için kullanılabilir.
+Satıcıların kimlik bilgilerini, hesap durumlarını, şifre doğrulamalarını, ortalama değerlendirmelerini ve genel hesap bilgilerini saklamak için kullanılır. "TaxDepartmentId" alanı ile satıcıların vergi dairesine bağlı olduğu bilgisi tutulabilir ve "IsActive" alanı ile satıcı hesaplarının etkinliği kontrol edilebilir. Bu tür bir tablo, bir e-ticaret platformunda veya bir pazaryerinde satıcıların hesap yönetimi için kullanılabilir.
 
 ---
 
@@ -371,9 +371,7 @@ Name
 
 **AÇIKLAMA:** 
 
-Bu tablo, vergi dairesi bilgilerini yönetmek ve bu bilgileri şehir ve ilçe düzeyinde sınıflandırmak için kullanılır. Vergi daireleri farklı şehirlerde ve ilçelerde yer alabilir, bu nedenle "City" ve "Town" alanları bu ilişkiyi belirtir. Vergi dairesi kodu ("Code") benzersiz bir kimlik sağlar ve bu kodla bir vergi dairesi kolayca tanımlanabilir. "Name" alanı, vergi dairesinin adını içerir ve daha anlaşılır bir şekilde temsil eder.
-
-Bu tür bir tablo, bir organizasyonun vergi dairesi bilgilerini yönetmek için veya bir uygulamada vergi dairesi seçimi veya ilişkilendirmesi gerektiğinde kullanılır.
+Vergi dairesi bilgilerini yönetmek ve bu bilgileri şehir ve ilçe düzeyinde sınıflandırmak için kullanılır. Vergi daireleri farklı şehirlerde ve ilçelerde yer alabilir, bu nedenle "City" ve "Town" alanları bu ilişkiyi belirtir. Vergi dairesi kodu ("Code") benzersiz bir kimlik sağlar ve bu kodla bir vergi dairesi kolayca tanımlanabilir. "Name" alanı, vergi dairesinin adını içerir ve daha anlaşılır bir şekilde temsil eder.
 
 ---
 
