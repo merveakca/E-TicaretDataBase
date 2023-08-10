@@ -19,6 +19,7 @@ VatRate
 Bu tablo, ürün kategorilerini hiyerarşik bir şekilde organize edebilme yeteneği sağlar (ana kategoriler ve alt kategoriler). "MainCategoryId" alanı sayesinde bu ilişki kurulabilir. "Path" alanı, bir kategorinin tam olarak nerede olduğunu izlemek için kullanılabilir (örneğin, bir "Mobilya" kategorisinin "Ofis Mobilyaları" alt kategorisi gibi). "VatRate" alanı, bu kategoriye ilişkilendirilmiş bir vergi oranını saklar.
 
 Bu tablo, ürün kategorileri ve bunlarla ilişkili bilgileri düzenlemek ve sorgulamak için kullanışlı olabilir.
+
 ---
 
 # 2. CategoryEquivalents Tablosu
